@@ -28,14 +28,13 @@ dropDown.addEventListener("change",(e)=>{
             };
             
             let response = await fetch(`https://api.foursquare.com/v3/places/search?query=${busQuery}&ll=35.88%2C-78.66&radius=10&limit=5`, options)//original
-
+            //const respObj = await JSON.parse(response)
             /* let response = await fetch(`https://api.foursquare.com/v3/places/search?query=${busQuery}&ll=${lat}%2C-${long}&radius=10&limit=${searchLimit}`, options)//modified */
 
-            /****Original ${corsFix}
             .then(response => response.json())
             .then(response => console.log(response))
             .catch(err => console.error(err));
-        */
+        /****Original ${corsFix}*/
          /*******Old Fetch   
         const options = {
             method: 'GET',
@@ -59,7 +58,7 @@ dropDown.addEventListener("change",(e)=>{
         .then(response => console.log(response))
         .catch(err => console.error(err));
         **********/
-         console.log(response)
+         
         }
     getQuery(menuChoice)
     
@@ -97,7 +96,7 @@ async function main(){
     // createMenu()
 
     coords = generateMap()
-    console.log(`Initial Menu Selection: ${menuChoice}`)
+    console.log(`Initial Menu Selection: null`)
  
     // getQuery(`${menuList[0]}`)
     // createMap()
