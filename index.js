@@ -38,7 +38,7 @@ dropDown.addEventListener("change",(e)=>{
                 Authorization: fsKey
             }}
             
-        const response = await fetch(`${corsFix}https://api.foursquare.com/v3/places/search?query=${busQuery}&ll=${lat}%2C${long}&limit=5&radius=500`, options)
+        const response = await fetch(`${corsFix}https://api.foursquare.com/v3/places/search?query=${busQuery}&ll=${lat}%2C${long}&limit=5&radius=5000`, options)
         
         const data = await response.text()
         let parseData = JSON.parse(data)
@@ -58,7 +58,6 @@ dropDown.addEventListener("change",(e)=>{
      businessData = getQuery(menuChoice)
     //  generateMap()
     .then (()=>{console.log(businessData)})
-    
  })
 
 const generateMap = async () =>{
@@ -86,8 +85,8 @@ const generateMap = async () =>{
 
 async function main(){
     
-    generateMap()
-    //coords = generateMap()
+    // generateMap()
+    coords = generateMap()
     console.log(`Initial Menu Selection: null`)
     console.log(typeof coords)
 }
